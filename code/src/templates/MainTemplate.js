@@ -1,27 +1,33 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './MainTemplate.css';
 
 const MainTemplate = ({ children }) => {
+const navLinks = [
+    { path: "/", name: "Home" },
+    { path: "/about", name: "About" },
+    { path: "/contact", name: "Contact" }
+];
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: '20%', height: '100vh', backgroundColor: '#f0f0f0', padding: '20px' }}>
-        <nav>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            <li>
-              <NavLink to="/" exact activeClassName="active">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about" activeClassName="active">About</NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact" activeClassName="active">Contact</NavLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div style={{ width: '80%', backgroundColor: '#ffffff', padding: '20px' }}>
-        {children}
-      </div>
+    <div class="template--container">
+        <div class="template--row">
+            <div class="template--column-left">
+                <nav>
+                    <ul style={{ listStyle: 'none', padding: 0 }}>
+                        {navLinks.map((link) => (
+                        <li key={link.path}>
+                            <NavLink to={link.path} exact activeClassName="active">
+                            {link.name}
+                            </NavLink>
+                        </li>
+                        ))}
+                    </ul>
+                </nav>
+            </div>
+            <div class="template--column-right">
+                {children}
+            </div>
+        </div>
     </div>
   );
 }
