@@ -12,6 +12,7 @@ const navLinks = [
     <div class="template--container">
         <div class="template--row">
             <div class="template--column-left">
+                <div class="logo-section"><img src='/logo512.png'/><span>The Furry Handbook</span></div>
                 <nav>
                     <ul style={{ listStyle: 'none', padding: 0 }}>
                         {navLinks.map((link) => (
