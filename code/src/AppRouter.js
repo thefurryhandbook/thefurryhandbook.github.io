@@ -4,32 +4,19 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
+import MainTemplate from './templates/MainTemplate';
 
 function AppRouter() {
 return (
     <Router>
-        <div>
-            <nav>
-            <ul>
-                <li>
-                <Link to="/">Home</Link>
-                </li>
-                <li>
-                <Link to="/about">About</Link>
-                </li>
-                <li>
-                <Link to="/contact">Contact</Link>
-                </li>
-            </ul>
-            </nav>
-
+        <MainTemplate>
             <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<NotFoundPage />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="*" element={<NotFoundPage />} />
             </Routes>
-        </div>
+        </MainTemplate>
     </Router>
     ); 
 }
