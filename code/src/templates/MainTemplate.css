@@ -1,0 +1,41 @@
+.template--container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.template--row {
+    display: flex;
+
+}
+
+.template--column-left {
+    width: 20%;
+    background-color: #f0f0f0;
+    padding: 64px 32px;
+    min-height: 100vh;
+}
+
+.template--column-left ul li {
+    font-size: 18px;
+}
+
+.template--column-left ul li a {
+    display: block;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: 0.2s all;
+    font-weight: 600;
+    padding: 8px;
+}
+
+.template--column-left ul li a:hover {
+    opacity: 1.0;
+}
+
+.template--column-right {
+    width: 80%;
+    background-color: '#ffffff'; 
+    padding: 64px;
+}
